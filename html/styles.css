@@ -1,0 +1,75 @@
+:root {
+  --accent: #1971c2;
+  --bg: #ffffff;
+  --fg: #24292f;
+  --muted: #57606a;
+  --border: #d0d7de;
+  --code-bg: #f6f8fa;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #eef1f5;
+  color: var(--fg);
+  line-height: 1.75;
+  font-family: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", "Segoe UI", system-ui, sans-serif;
+}
+
+/* 頂部導覽 */
+.topnav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; flex-wrap: wrap; gap: 4px;
+  background: #1f2937; padding: 10px 16px;
+  box-shadow: 0 1px 6px rgba(0,0,0,.18);
+}
+.topnav a {
+  color: #cbd5e1; text-decoration: none;
+  padding: 6px 12px; border-radius: 6px; font-size: 14px;
+  transition: background .15s, color .15s;
+}
+.topnav a:hover { background: rgba(255,255,255,.12); color: #fff; }
+.topnav a.active { background: var(--accent); color: #fff; }
+
+/* 內文卡片 */
+.markdown-body {
+  max-width: 900px; margin: 28px auto; padding: 36px 44px;
+  background: var(--bg);
+  border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.06);
+}
+.markdown-body h1 { font-size: 1.9em; margin-top: 0; padding-bottom: .3em; border-bottom: 2px solid var(--border); }
+.markdown-body h2 { font-size: 1.45em; margin-top: 1.9em; padding-bottom: .25em; border-bottom: 1px solid var(--border); }
+.markdown-body h3 { font-size: 1.2em; margin-top: 1.5em; }
+.markdown-body a { color: var(--accent); text-decoration: none; }
+.markdown-body a:hover { text-decoration: underline; }
+.markdown-body p { margin: .8em 0; }
+.markdown-body ul, .markdown-body ol { padding-left: 1.6em; }
+.markdown-body li { margin: .3em 0; }
+.markdown-body hr { border: 0; border-top: 1px solid var(--border); margin: 2em 0; }
+
+/* 表格 */
+.markdown-body table { border-collapse: collapse; width: 100%; margin: 1.1em 0; font-size: .95em; }
+.markdown-body th, .markdown-body td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; vertical-align: top; }
+.markdown-body th { background: #f1f5f9; font-weight: 600; }
+.markdown-body tbody tr:nth-child(2n) td { background: #fafbfc; }
+
+/* 引用 / 程式碼 */
+.markdown-body blockquote {
+  margin: 1em 0; padding: .6em 1em; color: var(--muted);
+  border-left: 4px solid var(--accent); background: #f6f8fa; border-radius: 0 6px 6px 0;
+}
+.markdown-body blockquote p { margin: .4em 0; }
+.markdown-body code {
+  background: var(--code-bg); padding: .15em .4em; border-radius: 4px;
+  font-family: "Cascadia Code", Consolas, "Courier New", monospace; font-size: .9em;
+}
+.markdown-body pre code { background: none; padding: 0; }
+
+/* mermaid 圖 */
+.markdown-body pre.mermaid { text-align: center; background: #fff; margin: 1.4em 0; line-height: 1.2; }
+.markdown-body pre.mermaid svg { max-width: 100%; height: auto; }
+
+@media (max-width: 640px) {
+  .markdown-body { padding: 22px 16px; margin: 14px; }
+  .markdown-body table { display: block; overflow-x: auto; }
+}
