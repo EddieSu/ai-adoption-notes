@@ -7,28 +7,35 @@
 
 ## 一、兩個維度,其實是同一把尺
 
-骨架都是同一條階梯:**個案 → 可重複機制 → 規則本身**(由低槓桿到高槓桿)。三組擺在一起(由左到右＝低 → 中 → 高),一眼看出是「同一把尺」:
+骨架都是同一條階梯:**個案 → 可重複機制 → 規則本身**(由低槓桿到高槓桿)。下面三條階梯各占一列,都由左到右「低 → 中 → 高」——擺在一起就看出是同一把尺:
 
 ```mermaid
-flowchart TB
+flowchart LR
     subgraph P["產出物階梯（量職務）"]
         direction LR
         P1["文件<br/>郵件 · 程式碼"] --> P2["制度 · 系統<br/>可重複的機制"] --> P3["決策<br/>規則 · 方向"]
     end
+    classDef out fill:#d0ebff,stroke:#1971c2,color:#1864ab
+    class P1,P2,P3 out
+```
+
+```mermaid
+flowchart LR
     subgraph T["工具關係階梯（量人）"]
         direction LR
         T1["被工具服務<br/>系統 / AI 幫你做"] --> T2["使用工具<br/>主動操作"] --> T3["製作工具<br/>造給別人用"]
     end
+    classDef tool fill:#d3f9d8,stroke:#2f9e44,color:#2b8a3e
+    class T1,T2,T3 tool
+```
+
+```mermaid
+flowchart LR
     subgraph E["共同本質"]
         direction LR
         E1["處理個案"] --> E2["運作機制"] --> E3["設定規則"]
     end
-
-    classDef out fill:#d0ebff,stroke:#1971c2,color:#1864ab
-    classDef tool fill:#d3f9d8,stroke:#2f9e44,color:#2b8a3e
     classDef ess fill:#fff3bf,stroke:#f08c00,color:#5c3c00
-    class P1,P2,P3 out
-    class T1,T2,T3 tool
     class E1,E2,E3 ess
 ```
 
