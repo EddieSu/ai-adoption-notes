@@ -20,7 +20,8 @@
     ["雲端AI資料防護構想.html", "① 資料防護"],
     ["AI職務增強評估框架.html", "② 職務框架"],
     ["AI增效價值飛輪與分配.html", "③ 價值飛輪"],
-    ["Claude落地實作示例.html", "Claude 落地"]
+    ["Claude落地實作示例.html", "Claude 落地"],
+    ["資料數位化程度與AI介入.html", "資料數位化"]
   ];
   var current = decodeURIComponent((location.pathname.split("/").pop() || ""));
   var nav = document.createElement("nav");
